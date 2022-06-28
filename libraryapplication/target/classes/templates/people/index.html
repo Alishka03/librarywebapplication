@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список людей</title>
+    <style type="text/css">
+        a {
+            font-size: 90%;
+            font-family: Times New Roman, Arial, Helvetica, sans-serif;
+            color: #333366;
+        }
+    </style>
+</head>
+<body>
+<div th:each="person : ${people}">
+    <a th:href = "@{/people/{id}(id=${person.getPerson_id()})}" th:text = "|${person.getFull_name} , ${person.getPerson_year()}|">VALUE</a>
+</div>
+<hr>
+<a href = "/people/new">New Person</a>
+<hr>
+<a href = "/books">List of book in a library</a>
+</body>
+</html>
